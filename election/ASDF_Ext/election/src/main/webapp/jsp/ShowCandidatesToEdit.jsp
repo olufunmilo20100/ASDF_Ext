@@ -2,50 +2,45 @@
     pageEncoding="UTF-8"%>
      <%@ page import="java.util.ArrayList" %>   
  <%@ page import="data.Candidates" %>   
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+
+
+
+    
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Create Candidates</title>
+<meta charset="UTF-8">
+<title>Update Candidate</title>
 </head>
 <body>
-    <center><h1>Candidate's Page</h1></center>
-    <div align="center">
- 
-        <c:if test="${candidates == null}">
-            <form action="/insert" method="post" >
-        </c:if>
-        <table border="1" cellpadding="5">
-            <caption>
-                <h2>
-                    <c:if test="${candidates != null}">
-                        Edit Candidate's Information
-                    </c:if>
-                    <c:if test="${candidates == null}">
-                        Enter Candidate's Information
-                    </c:if>
-                </h2>
-            </caption>
-                <c:if test="${candidates != null}">
-                    <input type="hidden" name="id" value="<c:out value='${candidates.id}' />" />
-                </c:if>           
+ <div align="center">
+<h2>Edit Candidate's Information</h2>
+
+<form action='update' method='post'>
+ <table border="1" cellpadding="5">
+          <tr>
+                <th>Id</th>
+                <td>
+
+<input type='text' name='id' value='${requestScope.candidates.id}' readonly><br> 
+      </td>
+            </tr>
             <tr>
                 <th>FULL NAME</th>
                 <td>
-                    <input type="text" name="fullname" size="45"
-                            value="<c:out value='${candidates.fullname}' />"
-                        />
-                </td>
+ <input type='text' name='fullname' value='${requestScope.candidates.fullname}'><br>
+       </td>
             </tr>
             <tr>
                 <th>EMAIL</th>
                 <td>
-                    <input type="text" name="email" size="45"
-                            value="<c:out value='${candidates.email}' />"
-                    />
-                </td>
+<input type='text' name='email' value='${requestScope.candidates.email}'><br>
+      </td>
             </tr>
             <tr>
-                <th>AGE </th>
+                <th>AGE</th>
                 <td>
                 <select name="age">
                 <option value=""> Select Age</option> 
@@ -93,14 +88,14 @@
     			<option value="59"> 59 </option>
     			<option value="60"> 60 </option>
 				</select>
-				<input type="hidden" value="<c:out value='${candidates.age}' />">
-
-                </td>
+<input type='hidden' name='age' value='${requestScope.candidates.age}'>
+<input type='text' name='age' value='${requestScope.candidates.age}' readonly><br>
+      </td>
             </tr>
-                   <tr>
-                <th>PARTY </th>
+            <tr>
+                <th>PARTY</th>
                 <td>
-                    <select name="party">
+                <select name="party">
                 <option value=""> Select Party </option> 
     			<option value="National Coalition Party – KOK"> National Coalition Party – KOK </option>
    				<option value="The Social Democratic Party of Finland - SDP"> The Social Democratic Party of Finland - SDP </option>
@@ -111,29 +106,24 @@
     			<option value="The Swedish People’s Party – RKP"> The Swedish People’s Party – RKP </option>
     			<option value="Christian Democrats – KD"> Christian Democrats – KD </option>
 				</select>
-				<input type="hidden" value="<c:out value='${candidates.party}' />">
-                </td>
+<input type='hidden' name='party' value='${requestScope.candidates.party}'>
+<input type='text' name='party' value='${requestScope.candidates.party}' readonly><br>
+      </td>
             </tr>
-                   <tr>
+            <tr>
                 <th>PROFESSION</th>
                 <td>
-                    <input type="text" name="proffesion" size="5"
-                            value="<c:out value='${candidates.proffesion}' />"
-                    />
+<input type='text' name='proffesion' value='${requestScope.candidates.proffesion}'><br>
                 </td>
             </tr>
             <tr>
-                <td colspan="2" align="center">
-                    <input type="submit" value="Save" />
-                    <input type="button" value="Cancel" onclick="javascript:history.go(-1);">
-                </td>
+            <td colspan="2" align="center">
+<input type='submit' name='ok' value='Send'> 
+<input type="button" value="Cancel" onclick="javascript:history.go(-1);">
+        </td>
             </tr>
         </table>
-        </form>
-    </div>   
-    
-        <br>
-  <br>
-<center> <a href='/index.html'>Home Page</a></center>
+          </div>  
+</form>
 </body>
 </html>

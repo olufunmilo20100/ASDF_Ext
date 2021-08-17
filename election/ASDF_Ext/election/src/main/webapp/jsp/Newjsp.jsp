@@ -131,9 +131,5 @@
         </table>
         </form>
     </div>   
-    
-        <br>
-  <br>
-<center> <a href='/index.html'>Home Page</a></center>
 </body>
 </html>
