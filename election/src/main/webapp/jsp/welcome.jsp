@@ -8,7 +8,14 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
-<%
+	<%
+	if(session.getAttribute("login")==null || session.getAttribute("login")==" ") //check condition unauthorize user not direct access welcome.jsp page
+	{
+		response.sendRedirect("index.jsp"); 
+	}
+	%>
+
+	<%
 
 String driver = "com.mysql.jdbc.Driver";
 String connectionUrl = "jdbc:mysql://localhost:3308/";
@@ -23,16 +30,26 @@ e.printStackTrace();
 Connection connection = null;
 Statement statement = null;
 ResultSet resultSet = null;
-
 %>
+
 <!DOCTYPE html>
 <html>
 <body style='background-color: #E7CFCA;'>
 <head>
-<title>Candidates List Page</title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Welcome @ <%=session.getAttribute("login")%></title>
+
+	<link rel="stylesheet" href="html/css/style.css">
+
 </head>
+
 <body>
-    <div align="center">
+
+<div align="center">
     <style>
 .styled-table {
     border-collapse: collapse;
@@ -68,25 +85,35 @@ ResultSet resultSet = null;
 }
 </style>
 
-<center><h1>Candidate Lists</h1></center>
+    <ul>
+        <h3><a href="logout.jsp">Logout</a></h3>
+    </ul>
+    <br><br>
+
+    <div class="main-content">
+	
+	<center>
+	
+	<h1> Welcome to your profile page @ <%=session.getAttribute("login")%> </h1>
+	<br><br>
+
+</center>
 <table border="1">
 <tr>
                 <th>ID</th>
                 <th>FULL NAME</th>
                 <th>EMAIL</th>
                 <th>AGE</th>
-                <th>MINISTRY</th>
+                <th>PARTY</th>
                 <th>PROFESSION</th>
                 <th>SCORE</th>
-                <th>UPDATE</th>
-                <th>DELETE</th>
 				<th>QUESTIONNAIRE</th>
             </tr>
 <%
 try{
 connection = DriverManager.getConnection(connectionUrl+database, userid, password);
 statement=connection.createStatement();
-String sql ="SELECT * FROM candidates";
+String sql = "SELECT candidates.*, scores.score from scores INNER JOIN candidates on scores.email = candidates.email WHERE scores.username = '"+session.getAttribute("login")+"'";
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
@@ -98,8 +125,6 @@ while(resultSet.next()){
 <td><%=resultSet.getString("party") %></td>
 <td><%=resultSet.getString("proffesion") %></td>
 <td><%=resultSet.getString("score") %></td>
-<td><a href='/readtoupdate?id=${candidates.id}'>Update</a></td>
-<td><a href='/delete?id=${candidates.id}'>Delete</a></td>
 <td><a href='/html/index.html'>Questionnaire</a></td>
 </tr>
 <%
@@ -112,12 +137,13 @@ e.printStackTrace();
 </table>
 
     </div>  
-        <center>
-         <h2>
-            <a href="/index.html">Home</a>
-                &nbsp;&nbsp;&nbsp;
-        </h2>
-    </center> 
-    
+    <br><br>
+    	<h1>Is your score 0? Kindly Attempt the Questionnaire to update your score.</h1></center>
+
+		
+    </div>
+    </center>
+
 </body>
+
 </html>

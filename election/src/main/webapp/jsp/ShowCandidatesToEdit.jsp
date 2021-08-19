@@ -10,6 +10,7 @@
     
 <!DOCTYPE html>
 <html>
+<body style='background-color: #E7CFCA;'>
 <head>
 <meta charset="UTF-8">
 <title>Update Candidate</title>
@@ -115,6 +116,13 @@
                 <td>
 <input type='text' name='proffesion' value='${requestScope.candidates.proffesion}'><br>
                 </td>
+            </tr>
+                      <tr>
+                <th>Score</th>
+                <td>
+
+<input type='text' name='score' value='${requestScope.candidates.score}' readonly><br> 
+      </td>
             </tr>
             <tr>
             <td colspan="2" align="center">

@@ -1,7 +1,7 @@
 <%@page contentType="text/html" language="java" import="java.sql.*"%>
 
 <html>
-
+<body style='background-color: #E7CFCA;'>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,18 +13,15 @@
 
 </head>
 	<%
-	if(session.getAttribute("login")==null || session.getAttribute("login")==" ") //check condition unauthorize user not direct access welcome.jsp page
-	{
-		response.sendRedirect("welcome.jsp"); 
-	}
+//	if(session.getAttribute("login")==null || session.getAttribute("login")==" ") //check condition unauthorize user not direct access welcome.jsp page
+//	{
+//		response.sendRedirect("index.html"); 
+//	}
 	%>
 <br><br>	
-<center><h2> CANDIDATE: <%=session.getAttribute("login")%> </h2></center>
+<h4> &nbsp;&nbsp;&nbsp; Current Login @ <%=session.getAttribute("login")%> </h4>
+<br><br><br><br><br><br>
 <body>
-<h2 style="text-align:center">YOUR ELECTION QUESTIONNAIRE RESULT</h2>
-<p>
-<center><a href="/jsp/welcome.jsp">Back To Main Page</a></center>
-</p>
 <hr/>
 <br><br><br>
 <center>
@@ -43,7 +40,7 @@ String str10=request.getParameter("ans10");
 int mark=0;
 
 Class.forName("com.mysql.jdbc.Driver");
-Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/electionmachine","testuser","password");
+Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3308/electionmachine","testuser","password");
 Statement stmt=con.createStatement();
 ResultSet rs=stmt.executeQuery("SELECT * FROM answers");
 
@@ -133,21 +130,21 @@ while(rs.next())
  }
  i++;
 }
-if(mark>=7)
-{
- out.println("<h1>Your Score Is : "+mark+"</h1>");
- out.println("<h2>Congratulations....! You Are Eligible as a Good Candidate...</h2>");
-}
-else
-{
- out.println("<h1>Your Score is : "+mark+"</h1>");
- out.println("<h2>Sorry....!! You Are Not Eligible as a Good Candidate...</h2>");
-}
+
+out.println("<h1>Thank you for your participation in the Election Questionnaire</h1>");
+
+out.println("<h1>YOU HAVE SCORED: "+mark+"</h1>");
+
+out.println("<h1>Your Score is now Updated against your record.</h1>");
 %>
+<br><br>
+<hr>
+
+
 
 <%
 PreparedStatement pstmt=null; //create statement
-pstmt=con.prepareStatement("UPDATE SCORES SET SCORE = "+mark+" WHERE email = '"+session.getAttribute("login")+"'");
+pstmt=con.prepareStatement("UPDATE SCORES SET SCORE = "+mark+" WHERE username = '"+session.getAttribute("login")+"'");
 pstmt.executeUpdate();
 
 request.setAttribute("successMsg","Score Successfully updated to Database"); //register success messeage
@@ -157,5 +154,9 @@ con.close(); //close connection
 </center>
 </form>
 </body>
+<br><br><br>
+<p>
+<center><a href="/jsp/welcome.jsp">Exit Page</a></center>
+</p>
 
 </html>

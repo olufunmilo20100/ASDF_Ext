@@ -27,7 +27,6 @@ ResultSet resultSet = null;
 %>
 <!DOCTYPE html>
 <html>
-<body style='background-color: #E7CFCA;'>
 <head>
 <title>Candidates List Page</title>
 </head>
@@ -78,15 +77,12 @@ ResultSet resultSet = null;
                 <th>MINISTRY</th>
                 <th>PROFESSION</th>
                 <th>SCORE</th>
-                <th>UPDATE</th>
-                <th>DELETE</th>
-				<th>QUESTIONNAIRE</th>
             </tr>
 <%
 try{
 connection = DriverManager.getConnection(connectionUrl+database, userid, password);
 statement=connection.createStatement();
-String sql ="SELECT * FROM candidates";
+String sql ="SELECT candidates.*, scores.score from scores INNER JOIN candidates on scores.email = candidates.email ORDER BY candidates.id";
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
@@ -98,9 +94,6 @@ while(resultSet.next()){
 <td><%=resultSet.getString("party") %></td>
 <td><%=resultSet.getString("proffesion") %></td>
 <td><%=resultSet.getString("score") %></td>
-<td><a href='/readtoupdate?id=${candidates.id}'>Update</a></td>
-<td><a href='/delete?id=${candidates.id}'>Delete</a></td>
-<td><a href='/html/index.html'>Questionnaire</a></td>
 </tr>
 <%
 }

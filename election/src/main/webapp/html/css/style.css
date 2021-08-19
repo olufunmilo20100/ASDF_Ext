@@ -11,23 +11,25 @@ body				{ font: 14px Georgia, serif; }
 
 h1                  { margin: 25px 0; font: 30px Georgia, Serif; text-transform: uppercase; text-align: center; letter-spacing: 2px; }
 
-#quiz input {
+hr    { background: black; }
+
+input {
     vertical-align: middle;
 }
 
-#quiz ol {
+ol {
    margin: 0 0 10px 20px;
 }
 
-#quiz ol li {
+ol li {
    margin: 0 0 20px 0;
 }
 
-#quiz ol li div {
+ol li div {
    padding: 4px 0;
 }
 
-#quiz h3 {
+h3 {
    font-size: 17px; margin: 0 0 1px 0; color: #666;
 }
 
