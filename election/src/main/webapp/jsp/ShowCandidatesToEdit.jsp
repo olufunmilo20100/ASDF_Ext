@@ -89,8 +89,9 @@
     			<option value="59"> 59 </option>
     			<option value="60"> 60 </option>
 				</select>
-<input type='hidden' name='age' value='${requestScope.candidates.age}'>
-<input type='text' name='age' value='${requestScope.candidates.age}' readonly><br>
+				<input type='hidden' name='age' value='${requestScope.candidates.age}' readonly><br>
+				<input type='hidden' name='age' value='${requestScope.candidates.age}'>
+
       </td>
             </tr>
             <tr>
@@ -107,8 +108,9 @@
     			<option value="The Swedish People’s Party – RKP"> The Swedish People’s Party – RKP </option>
     			<option value="Christian Democrats – KD"> Christian Democrats – KD </option>
 				</select>
-<input type='hidden' name='party' value='${requestScope.candidates.party}'>
-<input type='text' name='party' value='${requestScope.candidates.party}' readonly><br>
+				<input type='hidden' name='party' value='${requestScope.candidates.party}' readonly><br>
+				<input type='hidden' name='party' value='${requestScope.candidates.party}'>
+
       </td>
             </tr>
             <tr>
@@ -117,13 +119,7 @@
 <input type='text' name='proffesion' value='${requestScope.candidates.proffesion}'><br>
                 </td>
             </tr>
-                      <tr>
-                <th>Score</th>
-                <td>
 
-<input type='text' name='score' value='${requestScope.candidates.score}' readonly><br> 
-      </td>
-            </tr>
             <tr>
             <td colspan="2" align="center">
 <input type='submit' name='ok' value='Send'> 

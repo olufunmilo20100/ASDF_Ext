@@ -27,10 +27,15 @@ ResultSet resultSet = null;
 %>
 <!DOCTYPE html>
 <html>
+<body style='background-color: #E7CFCA;'>
 <head>
-<title>Candidates List Page</title>
+<title>Candidates List</title>
 </head>
 <body>
+    <ul>
+        <h3><a href="/index.html">Home Page</a></h3>
+
+    </ul>
     <div align="center">
     <style>
 .styled-table {
@@ -74,7 +79,7 @@ ResultSet resultSet = null;
                 <th>FULL NAME</th>
                 <th>EMAIL</th>
                 <th>AGE</th>
-                <th>MINISTRY</th>
+                <th>PARTY</th>
                 <th>PROFESSION</th>
                 <th>SCORE</th>
             </tr>
@@ -105,12 +110,7 @@ e.printStackTrace();
 </table>
 
     </div>  
-        <center>
-         <h2>
-            <a href="/index.html">Home</a>
-                &nbsp;&nbsp;&nbsp;
-        </h2>
-    </center> 
+
     
 </body>
 </html>
