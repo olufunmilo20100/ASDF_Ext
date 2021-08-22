@@ -7,7 +7,6 @@ public class Candidates {
 	private String age;
 	private String party;
 	private String proffesion;
-
 	public Candidates(String id, String fullname, String email, String age,String party, String proffesion) {
 		// TODO Auto-generated constructor stub
 		setId(id);
@@ -16,7 +15,6 @@ public class Candidates {
 		this.age=age;
 		this.party=party;
 		this.proffesion=proffesion;
-
 	}
 	 public Candidates() {
 	    }
@@ -91,6 +89,10 @@ public class Candidates {
 		public void setProffesion(String proffesion) {
 			this.proffesion = proffesion;
 		}
-
-}
+	
+	
+	
+	
+	
+	}
 

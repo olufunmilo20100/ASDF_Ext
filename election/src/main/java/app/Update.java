@@ -37,7 +37,6 @@ public class Update extends HttpServlet {
 		String age=request.getParameter("age");
 		String party=request.getParameter("party");
 		String proffesion=request.getParameter("proffesion");
-
 		
 		Candidates Candi=new Candidates( id, fullname, email, age, party,proffesion);
 		

@@ -139,7 +139,8 @@ e.printStackTrace();
     </div>  
     <br><br>
     	<h1>Is your score 0? Kindly Attempt the Questionnaire to update your score.</h1></center>
-
+		<h2> <%=session.getAttribute("login")%>, this is your greatest opportunity to showcase yourself and be known to people. 
+		The questionnaire is a guide to score your interest and intensions towards your Party and the nation.</h2>
 		
     </div>
     </center>

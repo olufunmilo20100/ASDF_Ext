@@ -140,6 +140,8 @@ catch(Exception e)
 
     <ul>
         <a href="/index.html">Home Page</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="index.jsp"> <b> Login </b></a>
 
     </ul>
 

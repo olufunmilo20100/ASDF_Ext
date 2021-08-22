@@ -37,9 +37,8 @@ public class insert extends HttpServlet {
 		String age=request.getParameter("age");
 		String party=request.getParameter("party");
 		String proffesion=request.getParameter("proffesion");
-
 		
-		   Candidates Candi=new Candidates(fullname,email,age, party,proffesion); 
+		   Candidates Candi=new Candidates(fullname,email,age, party,proffesion  ); 
 		  try {
 			Dao.insertCandidates(Candi);
 		} catch (SQLException e) {
