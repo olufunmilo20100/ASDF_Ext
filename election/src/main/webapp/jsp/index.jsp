@@ -66,7 +66,7 @@ catch(Exception e)
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Candidate Login Page</title>
+	<title>Login Page</title>
 
 	<link rel="stylesheet" href="html/css/style.css">
 	
@@ -147,7 +147,12 @@ catch(Exception e)
                     <br><br>
                 </div>
 
-				<h3><a href="registration.jsp" class="form-log-in-with-existing">You Don't have an account? <b> Register here </b></a></h3>
+				<h3><a href="registration.jsp" class="form-log-in-with-existing">You Don't have an account? <b> Register here </b></a>
+				        <br><br>
+				        <h1>Admin Use Only</h1>
+        		<a href="LoginAdmin.jsp"> <b> Admin Login</b></a>
+				
+				</h3>
 
             </div>
 
