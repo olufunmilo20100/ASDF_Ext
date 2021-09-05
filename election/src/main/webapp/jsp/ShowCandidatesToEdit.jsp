@@ -120,7 +120,7 @@ action='update' method='post'>
 
             <tr>
             <td colspan="2" align="center">
-<input type='submit' name='ok' value='Send'> 
+<input type='submit' name='ok' value='Confirm'> 
 <input type="button" value="Cancel" onclick="javascript:history.go(-1);">
         </td>
             </tr>

@@ -20,6 +20,7 @@ public class ShowCandidates extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Dao dao=null;
 	
+
 	@Override
 	public void init() {
 		dao=new Dao("jdbc:mysql://localhost:3308/electionmachine", "testuser", "password");
@@ -57,4 +58,7 @@ public class ShowCandidates extends HttpServlet {
 		RequestDispatcher rd=request.getRequestDispatcher("/jsp/ShowCandidates.jsp");
 		rd.forward(request, response);
 	}
+	
+
 }
+

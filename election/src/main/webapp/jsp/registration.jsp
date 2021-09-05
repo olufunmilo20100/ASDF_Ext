@@ -34,7 +34,7 @@ try
 		party=request.getParameter("txt_party"); //txt_party
 		proffesion=request.getParameter("txt_proffesion"); //txt_proffesion
 		
-		PreparedStatement pstmt=null; //create statement
+		PreparedStatement pstmt=null; //create statement 1
 		
 		pstmt=con.prepareStatement("insert into login(firstname,lastname,username,email,password) values(?,?,?,?,?)");//sql insert query
 		pstmt.setString(1,firstname);
@@ -43,7 +43,7 @@ try
 		pstmt.setString(4,email);
 		pstmt.setString(5,password);
 		
-		PreparedStatement pstmt1=null; //create statement
+		PreparedStatement pstmt1=null; //create statement 2
 		pstmt1=con.prepareStatement("insert into candidates(fullname,age,email,party,proffesion) values(?,?,?,?,?)");//sql insert query
 		pstmt1.setString(1,fullname);
 		pstmt1.setString(2,age);
@@ -51,7 +51,7 @@ try
 		pstmt1.setString(4,party);
 		pstmt1.setString(5,proffesion);
 		
-		PreparedStatement pstmt2=null; //create statement
+		PreparedStatement pstmt2=null; //create statement 3
 		pstmt2=con.prepareStatement("insert into scores(email,username) values(?,?)");//sql insert query
 		pstmt2.setString(1,email);
 		pstmt2.setString(2,username);
@@ -62,7 +62,7 @@ try
 		pstmt1.executeUpdate(); //execute query
 		pstmt2.executeUpdate(); //execute query
 		
-		request.setAttribute("successMsg","Register Completed...! Please Go to Login Page"); //register success messeage
+		request.setAttribute("successMsg","Registration Completed...! Please Go to Login Page"); //register success messeage
 
 		con.close(); //close connection
 	}
@@ -293,15 +293,13 @@ catch(Exception e)
 				</select>  
 				<input type=hidden name="txt_party" id="party">      
                     </label>
-                    <br><br><br><br>
+                    <br><br><br>
                     </div>  
                         
-                               
-
 					<input type="submit" name="btn_register" value="Submit">
 					
                 </div>
-				
+					
                 
 
             </div>
@@ -311,5 +309,9 @@ catch(Exception e)
     </div>
 
 </body>
+
+<footer>
+<center><h4>Courtesy @ Adeniyi Olufunmilola</h4></center>
+</footer>
 
 </html>

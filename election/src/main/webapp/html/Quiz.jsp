@@ -159,4 +159,11 @@ con.close(); //close connection
 <center><a href="/jsp/welcome.jsp">Exit Page</a></center>
 </p>
 
+  <br>
+  <br>
+  <br>
+  <br>
+<footer>
+<center><h4>Courtesy @ Adeniyi Olufunmilola</h4></center>
+</footer>
 </html>
