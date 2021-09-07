@@ -19,8 +19,19 @@ import data.Candidates;
     name = "Update",
     urlPatterns = {"/update"}
 )
+/**
+ * 
+ * @author Olufunmilola Adeniyi
+ * Updating record to the database
+ */
 public class Update extends HttpServlet {
+	/**
+	 * Update is been extended to the Webserlet
+	 */
 	private Dao dao;
+	/**
+	 * Dao package is been called to connect to the database with the DB credentials provided below.
+	 */
 	public void init() {
 		dao=new Dao("jdbc:mysql://localhost:3308/electionmachine", "testuser", "password");
 	}

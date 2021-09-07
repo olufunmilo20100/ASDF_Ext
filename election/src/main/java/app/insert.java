@@ -19,8 +19,20 @@ import data.Candidates;
     name = "insert",
     urlPatterns = {"/insert"}
 )
+/**
+ * 
+ * @author Olufunmilola Adeniyi
+ * Inserting record into the Database
+ */
+
 public class insert extends HttpServlet {
+	/**
+	 * Insert is been extended to the Webserlet
+	 */
 	private Dao dao;
+	/**
+	 * Dao package is been called to connect to the database with the DB credentials provided below.
+	 */
 	public void init() {
 		dao=new Dao("jdbc:mysql://localhost:3308/electionmachine", "testuser", "password");
 	}

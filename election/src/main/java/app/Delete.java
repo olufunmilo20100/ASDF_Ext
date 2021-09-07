@@ -19,8 +19,23 @@ import data.Candidates;
     name = "Delete",
     urlPatterns = {"/delete"}
 )
+/**
+ * 
+ * @author Olufunmilola Adeniyi
+ * This is to Delete the candidates record from the database
+ */
+ 
+
 public class Delete extends HttpServlet {
+	/**
+	 * The Delete class is extended to the Webservlet
+	 * 
+	 */
+	
 	private Dao dao;
+	/**
+	 * Dao package is been called to connect to the database with the DB credentials provided below.
+	 */
 	public void init() {
 		dao=new Dao("jdbc:mysql://localhost:3308/electionmachine", "testuser", "password");
 	}
