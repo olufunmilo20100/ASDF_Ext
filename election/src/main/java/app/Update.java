@@ -35,7 +35,12 @@ public class Update extends HttpServlet {
 	public void init() {
 		dao=new Dao("jdbc:mysql://localhost:3308/electionmachine", "testuser", "password");
 	}
+	
 	@Override
+	/**
+	 * This calls and action on the update candidate method function from Dao once connected to Dao
+	 *  It gets the ID of the candidate update is required for and process the data captured in the getParameter through the dispatcher
+	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	     throws IOException {
 		response.sendRedirect("index.html");

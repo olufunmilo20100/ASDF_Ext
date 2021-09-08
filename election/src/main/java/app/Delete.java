@@ -25,7 +25,6 @@ import data.Candidates;
  * This is to Delete the candidates record from the database
  */
  
-
 public class Delete extends HttpServlet {
 	/**
 	 * The Delete class is extended to the Webservlet
@@ -40,6 +39,10 @@ public class Delete extends HttpServlet {
 		dao=new Dao("jdbc:mysql://localhost:3308/electionmachine", "testuser", "password");
 	}
 	@Override
+	/**
+	 * This calls and action on the delete candidate method function from Dao once connected to Dao
+	 *  It gets the ID of the candidate deletion is required for and process the request through the dispatcher
+	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	     throws IOException, ServletException {
 		String id=request.getParameter("id");

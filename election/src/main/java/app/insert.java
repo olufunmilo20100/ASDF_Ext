@@ -37,6 +37,10 @@ public class insert extends HttpServlet {
 		dao=new Dao("jdbc:mysql://localhost:3308/electionmachine", "testuser", "password");
 	}
 	@Override
+	/**
+	 * This calls and action on the Insert candidate method function from Dao once connected to Dao
+	 *  It post the data captured by the getParameter once connected to Dao and dispatches
+	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	     throws IOException {
 		response.sendRedirect("index.html");
